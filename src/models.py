@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 class Book:
     def __init__(
         self,

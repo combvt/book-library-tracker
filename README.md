@@ -58,6 +58,7 @@ for browsing and searching books.
 │   ├── schemas.py        # Pydantic API schemas
 │   ├── google_api_client.py
 │   ├── utils.py
+│   ├── text_utils.py
 │   ├── db.py
 │   ├── config.py
 │   ├── storage/

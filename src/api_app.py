@@ -17,6 +17,15 @@ def google_client():
     return GoogleBooksClient(API_KEY)
 
 
+
+@app.get("/")
+def home():
+    return {
+        "status": "running",
+        "docs": "/docs",
+    }
+
+
 @app.get("/books", response_model=list[BookOut], status_code=status.HTTP_200_OK)
 def read_books(q: str | None = None, library: Library = Depends(sql_library)):
     if isinstance(library.storage, SqlLibraryStorage):

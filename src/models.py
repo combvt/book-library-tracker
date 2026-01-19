@@ -1,4 +1,5 @@
 from __future__ import annotations
+from .text_utils import strip_html
 
 class Book:
     def __init__(
@@ -34,7 +35,7 @@ class Book:
         book_author = ", ".join(volume_info.get("authors", ["Unknown author"]))
         book_published_date = volume_info.get("publishedDate", "Unknown")
         book_page_count = volume_info.get("pageCount", "Unknown")
-        book_description = volume_info.get("description", "No book description")
+        book_description = strip_html(volume_info.get("description", "No book description"))
         book_category = ", ".join(volume_info.get("categories", ["Unknown category"]))
         book_isbn = identifier.get("identifier", "Unknown ISBN")
 
